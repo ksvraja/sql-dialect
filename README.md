@@ -1,2 +1,1 @@
-# sql-dialect
-SQL Query generation for various RDBMS
+Dialects for different databases will be maintained here

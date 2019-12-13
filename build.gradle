@@ -1,0 +1,29 @@
+
+plugins {    
+    id 'java-library'
+	id 'maven-publish'
+}
+
+repositories { 
+    jcenter()
+}
+
+
+group = 'com.zitlab.palmyra.libs'
+version = '0.2'
+
+
+dependencies {
+
+}
+
+publishing {
+    repositories {
+        maven {
+            def releasesRepoUrl = "$buildDir/repos/releases"
+            def snapshotsRepoUrl = "$buildDir/repos/snapshots"
+            url = project.hasProperty('release') ? releasesRepoUrl : snapshotsRepoUrl
+        }
+    }
+}
+
