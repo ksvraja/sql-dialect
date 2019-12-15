@@ -18,11 +18,19 @@ dependencies {
 }
 
 publishing {
+		publications {
+            maven(MavenPublication) {
+                groupId = project.group
+                artifactId = project.name
+                version = project.version
+                from components.java
+            }
+        }
     repositories {
         maven {
             def releasesRepoUrl = "$buildDir/repos/releases"
             def snapshotsRepoUrl = "$buildDir/repos/snapshots"
-            url = project.hasProperty('release') ? releasesRepoUrl : snapshotsRepoUrl
+            url = project.hasProperty('release') ? releasesRepoUrl : snapshotsRepoUrl			
         }
     }
 }

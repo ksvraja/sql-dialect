@@ -12,7 +12,7 @@ import com.zitlab.palmyra.api2db.sqlbuilder.query.Table;
 
 public abstract class Condition extends NestableObject{
 
-	protected static final String getColumnAlias(Table table, String column) {
+	protected final String getColumnAlias(Table table, String column) {
 		return table.getAlias() + "." + column;
 	}
 }

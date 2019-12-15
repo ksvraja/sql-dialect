@@ -165,10 +165,10 @@ public class BinaryCondition extends Condition {
 	}
 	
 	public static NullCondition isNull(Table table, String column) {
-		return new NullCondition(getColumnAlias(table, column));
+		return new NullCondition(table, column);
 	}
 
 	public static NotNullCondition isNotNull(Table table, String column) {
-		return new NotNullCondition(getColumnAlias(table, column));
+		return new NotNullCondition(table, column);
 	}
 }
